@@ -1,0 +1,203 @@
+<h2>VERIFICADOR DE CÓDIGOS</h2>
+
+<input type="file" (change)="onFileChange($event)" multiple="false" />
+
+<!-- <select [(ngModel)]="selectedOption" (ngModelChange)="cambioSeleccion()">
+  <option value="joven">Joven</option>
+  <option value="adulto">Adulto</option>
+  <option value="adulto-mayor">Adulto Mayor</option>
+</select> -->
+
+<table class="table">
+    <thead>
+      <tr>
+        <td *ngFor="let cell of cabeceraData">
+          {{cell}}
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of data">
+          <td *ngFor="let cell of row">
+            {{cell}}
+          </td>
+        </tr>
+    </tbody>
+</table>
+<!-- JOVEN -->
+<div class="secciones">
+  <section *ngIf="flagJoven">
+    <h4>JOVEN DR. 1RA</h4>
+    <table class="tableJoven" *ngIf="flagJoven">
+      <tr>
+          <th>CODIGO</th>
+          <th>¿ENCONTRADO?</th>
+      </tr>
+      <tr *ngFor="let item of valoresJovenMe1er">
+        <td>{{item.codigo}}</td>
+        <!-- <th>{{item.labconf}}</th> -->
+        <td>{{comparar(item)}}</td>
+      </tr>
+    </table>
+  </section>
+  <section *ngIf="flagJoven">
+    <h4>JOVEN OTR. 1RA</h4>
+    <table class="tableJoven" *ngIf="flagJoven">
+      <tr>
+          <th>CODIGO</th>
+          <th>¿ENCONTRADO?</th>
+      </tr>
+      <tr *ngFor="let item of valoresJovenOtros1er">
+        <td>{{item.codigo}}</td>
+        <!-- <th>{{item.labconf}}</th> -->
+        <td>{{comparar(item)}}</td>
+      </tr>
+    </table>
+  </section>
+  <section *ngIf="flagJoven">
+    <h4>JOVEN DR. 2DA</h4>
+    <table class="tableJoven" *ngIf="flagJoven">
+      <tr>
+          <th>CODIGO</th>
+          <th>¿ENCONTRADO?</th>
+      </tr>
+      <tr *ngFor="let item of valoresJovenDr2do">
+        <td>{{item.codigo}}</td>
+        <!-- <th>{{item.labconf}}</th> -->
+        <td>{{compararJoven2da(item)}}</td>
+      </tr>
+    </table>
+  </section>
+  <section *ngIf="flagJoven">
+    <h4>JOVEN OTR. 2DA</h4>
+    <table class="tableJoven" *ngIf="flagJoven">
+      <tr>
+          <th>CODIGO</th>
+          <th>¿ENCONTRADO?</th>
+      </tr>
+      <tr *ngFor="let item of valoresJovenOtros2do">
+        <td>{{item.codigo}}</td>
+        <!-- <th>{{item.labconf}}</th> -->
+        <td>{{compararJoven2da(item)}}</td>
+      </tr>
+    </table>
+  </section>
+</div>
+<!-- ADULTO -->
+<div class="secciones">
+  <section *ngIf="flagAdulto">
+    <h4>ADULTO DR. 1RA</h4>
+    <table class="tableJoven" *ngIf="flagAdulto">
+      <tr>
+          <th>CODIGO</th>
+          <th>¿ENCONTRADO?</th>
+      </tr>
+      <tr *ngFor="let item of valoresJovenMe1er">
+        <td>{{item.codigo}}</td>
+        <!-- <th>{{item.labconf}}</th> -->
+        <td>{{comparar(item)}}</td>
+      </tr>
+    </table>
+  </section>
+  <section *ngIf="flagAdulto">
+    <h4>ADULTO OTR. 1RA</h4>
+    <table class="tableJoven" *ngIf="flagAdulto">
+      <tr>
+          <th>CODIGO</th>
+          <th>¿ENCONTRADO?</th>
+      </tr>
+      <tr *ngFor="let item of valoresJovenOtros1er">
+        <td>{{item.codigo}}</td>
+        <!-- <th>{{item.labconf}}</th> -->
+        <td>{{comparar(item)}}</td>
+      </tr>
+    </table>
+  </section>
+  <section *ngIf="flagAdulto">
+    <h4>ADULTO DR. 2DA</h4>
+    <table class="tableJoven" *ngIf="flagAdulto">
+      <tr>
+          <th>CODIGO</th>
+          <th>¿ENCONTRADO?</th>
+      </tr>
+      <tr *ngFor="let item of valoresJovenDr2do">
+        <td>{{item.codigo}}</td>
+        <!-- <th>{{item.labconf}}</th> -->
+        <td>{{compararAdulto2da(item)}}</td>
+      </tr>
+    </table>
+  </section>
+  <section *ngIf="flagAdulto">
+    <h4>ADULTO OTR. 2DA</h4>
+    <table class="tableJoven" *ngIf="flagAdulto">
+      <tr>
+          <th>CODIGO</th>
+          <th>¿ENCONTRADO?</th>
+      </tr>
+      <tr *ngFor="let item of valoresJovenOtros2do">
+        <td>{{item.codigo}}</td>
+        <!-- <th>{{item.labconf}}</th> -->
+        <td>{{compararAdulto2da(item)}}</td>
+      </tr>
+    </table>
+  </section>
+</div>
+<!-- ADULTO MAYOR -->
+<div class="secciones">
+  <section *ngIf="flagAdultoMayor">
+    <h4>ADULTO-MAYOR DR. 1RA</h4>
+    <table class="tableJoven" *ngIf="flagAdultoMayor">
+      <tr>
+          <th>CODIGO</th>
+          <th>¿ENCONTRADO?</th>
+      </tr>
+      <tr *ngFor="let item of valoresJovenMe1er">
+        <td>{{item.codigo}}</td>
+        <!-- <th>{{item.labconf}}</th> -->
+        <td>{{comparar(item)}}</td>
+      </tr>
+    </table>
+  </section>
+  <section *ngIf="flagAdultoMayor">
+    <h4>ADULTO-MAYOR OTR. 1RA</h4>
+    <table class="tableJoven" *ngIf="flagAdultoMayor">
+      <tr>
+          <th>CODIGO</th>
+          <th>¿ENCONTRADO?</th>
+      </tr>
+      <tr *ngFor="let item of valoresJovenOtros1er">
+        <td>{{item.codigo}}</td>
+        <!-- <th>{{item.labconf}}</th> -->
+        <td>{{comparar(item)}}</td>
+      </tr>
+    </table>
+  </section>
+  <section *ngIf="flagAdultoMayor">
+    <h4>ADULTO-MAYOR DR. 2DA</h4>
+    <table class="tableJoven" *ngIf="flagAdultoMayor">
+      <tr>
+          <th>CODIGO</th>
+          <th>¿ENCONTRADO?</th>
+      </tr>
+      <tr *ngFor="let item of valoresJovenDr2do">
+        <td>{{item.codigo}}</td>
+        <!-- <th>{{item.labconf}}</th> -->
+        <td>{{compararAdulMayor2da(item)}}</td>
+      </tr>
+    </table>
+  </section>
+  <section *ngIf="flagAdultoMayor">
+    <h4>ADULTO-MAYOR OTR. 2DA</h4>
+    <table class="tableJoven" *ngIf="flagAdultoMayor">
+      <tr>
+          <th>CODIGO</th>
+          <th>¿ENCONTRADO?</th>
+      </tr>
+      <tr *ngFor="let item of valoresJovenOtros2do">
+        <td>{{item.codigo}}</td>
+        <!-- <th>{{item.labconf}}</th> -->
+        <td>{{compararAdulMayor2da(item)}}</td>
+      </tr>
+    </table>
+  </section>
+</div>

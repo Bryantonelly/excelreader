@@ -1,0 +1,43 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+.table{
+  border-collapse: collapse;
+  /* border-spacing:40px; */
+}
+.table thead{
+  background-color: black;
+  color: aliceblue;
+  font-weight: bold;
+}
+.table thead td{
+  padding: 10px;
+}
+.table tbody td{
+  border: 1px solid black;
+}
+
+.tableJoven {
+  border-collapse: collapse;
+  font-weight: normal;
+  /* width: 50%; */
+}
+
+.tableJoven th, .tableJoven td {
+  border: 1px solid #766767;
+  padding: 2px 8px;
+  text-align: center;
+}
+.tableJoven th{
+  font-weight: normal;
+  background-color: #f2a6a6; /* Color de fondo pastel para el encabezado */
+}
+
+.tableJoven td:nth-child(1) {
+  background-color: #f2d9d9; /* Color de fondo pastel para las celdas */
+}
+
+.secciones{
+  display: flex;
+}
