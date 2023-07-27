@@ -31,11 +31,12 @@
     <table class="tableJoven" *ngIf="flagJoven">
       <tr>
           <th>CODIGO</th>
+          <th>LAB</th>
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresJovenMe1er">
         <td>{{item.codigo}}</td>
-        <!-- <th>{{item.labconf}}</th> -->
+        <td>{{item.labconf}}</td>
         <td>{{comparar(item)}}</td>
       </tr>
     </table>
@@ -45,11 +46,12 @@
     <table class="tableJoven" *ngIf="flagJoven">
       <tr>
           <th>CODIGO</th>
+          <th>LAB</th>
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresJovenOtros1er">
         <td>{{item.codigo}}</td>
-        <!-- <th>{{item.labconf}}</th> -->
+        <th>{{item.labconf}}</th>
         <td>{{comparar(item)}}</td>
       </tr>
     </table>
@@ -59,11 +61,12 @@
     <table class="tableJoven" *ngIf="flagJoven">
       <tr>
           <th>CODIGO</th>
+          <th>LAB</th>
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresJovenDr2do">
         <td>{{item.codigo}}</td>
-        <!-- <th>{{item.labconf}}</th> -->
+        <th>{{item.labconf}}</th>
         <td>{{compararJoven2da(item)}}</td>
       </tr>
     </table>
@@ -73,11 +76,12 @@
     <table class="tableJoven" *ngIf="flagJoven">
       <tr>
           <th>CODIGO</th>
+          <th>LAB</th>
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresJovenOtros2do">
         <td>{{item.codigo}}</td>
-        <!-- <th>{{item.labconf}}</th> -->
+        <th>{{item.labconf}}</th>
         <td>{{compararJoven2da(item)}}</td>
       </tr>
     </table>
@@ -90,11 +94,12 @@
     <table class="tableJoven" *ngIf="flagAdulto">
       <tr>
           <th>CODIGO</th>
+          <th>LAB</th>
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresAdultoDr1er">
         <td>{{item.codigo}}</td>
-        <!-- <th>{{item.labconf}}</th> -->
+        <th>{{item.labconf}}</th>
         <td>{{comparar(item)}}</td>
       </tr>
     </table>
@@ -104,11 +109,12 @@
     <table class="tableJoven" *ngIf="flagAdulto">
       <tr>
           <th>CODIGO</th>
+          <th>LAB</th>
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresAdultoOtros1er">
         <td>{{item.codigo}}</td>
-        <!-- <th>{{item.labconf}}</th> -->
+        <th>{{item.labconf}}</th>
         <td>{{comparar(item)}}</td>
       </tr>
     </table>
@@ -118,11 +124,12 @@
     <table class="tableJoven" *ngIf="flagAdulto">
       <tr>
           <th>CODIGO</th>
+          <th>LAB</th>
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresAdultoDr2do">
         <td>{{item.codigo}}</td>
-        <!-- <th>{{item.labconf}}</th> -->
+        <th>{{item.labconf}}</th>
         <td>{{compararAdulto2da(item)}}</td>
       </tr>
     </table>
@@ -132,11 +139,12 @@
     <table class="tableJoven" *ngIf="flagAdulto">
       <tr>
           <th>CODIGO</th>
+          <th>LAB</th>
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresAdultoOtros2do">
         <td>{{item.codigo}}</td>
-        <!-- <th>{{item.labconf}}</th> -->
+        <th>{{item.labconf}}</th>
         <td>{{compararAdulto2da(item)}}</td>
       </tr>
     </table>
@@ -149,11 +157,12 @@
     <table class="tableJoven" *ngIf="flagAdultoMayor">
       <tr>
           <th>CODIGO</th>
+          <th>LAB</th>
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresAdulMayorDr1er">
         <td>{{item.codigo}}</td>
-        <!-- <th>{{item.labconf}}</th> -->
+        <th>{{item.labconf}}</th>
         <td>{{comparar(item)}}</td>
       </tr>
     </table>
@@ -163,11 +172,12 @@
     <table class="tableJoven" *ngIf="flagAdultoMayor">
       <tr>
           <th>CODIGO</th>
+          <th>LAB</th>
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresAdulMayorOtros1er">
         <td>{{item.codigo}}</td>
-        <!-- <th>{{item.labconf}}</th> -->
+        <th>{{item.labconf}}</th>
         <td>{{comparar(item)}}</td>
       </tr>
     </table>
@@ -177,11 +187,12 @@
     <table class="tableJoven" *ngIf="flagAdultoMayor">
       <tr>
           <th>CODIGO</th>
+          <th>LAB</th>
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresAdulMayorDr2do">
         <td>{{item.codigo}}</td>
-        <!-- <th>{{item.labconf}}</th> -->
+        <th>{{item.labconf}}</th>
         <td>{{compararAdulMayor2da(item)}}</td>
       </tr>
     </table>
@@ -191,11 +202,12 @@
     <table class="tableJoven" *ngIf="flagAdultoMayor">
       <tr>
           <th>CODIGO</th>
+          <th>LAB</th>
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresAdulMayorOtros2do">
         <td>{{item.codigo}}</td>
-        <!-- <th>{{item.labconf}}</th> -->
+        <th>{{item.labconf}}</th>
         <td>{{compararAdulMayor2da(item)}}</td>
       </tr>
     </table>
