@@ -21,8 +21,13 @@ export class ExcelsheetComponent implements OnInit {
     { codigo: "96150.01", labconf: "" },
     { codigo: "99402.09", labconf: "" },
     { codigo: "Z019", labconf: "DNT" },
+    { codigo: "E46X", labconf: "IMC" },
     { codigo: "Z006", labconf: "IMC" },
-    { codigo: "U8170", labconf: "RS" },
+    { codigo: "E660", labconf: "IMC" },
+    { codigo: "E669", labconf: "IMC" },
+    { codigo: "U8170", labconf: "RSM" },
+    { codigo: "U8170", labconf: "RSA" },
+    { codigo: "U8170", labconf: "RMA" },
     { codigo: "99401.16", labconf: "" },
     { codigo: "Z010", labconf: "N" },
     { codigo: "Z011", labconf: "N" },
@@ -79,8 +84,13 @@ export class ExcelsheetComponent implements OnInit {
     { codigo: "Z000", labconf: "" },
     { codigo: "C8002", labconf: "1" },
     { codigo: "Z019", labconf: "DNT" },
+    { codigo: "E46X", labconf: "IMC" },
     { codigo: "Z006", labconf: "IMC" },
-    { codigo: "U8170", labconf: "RS" },
+    { codigo: "E660", labconf: "IMC" },
+    { codigo: "E669", labconf: "IMC" },
+    { codigo: "U8170", labconf: "RSM" },
+    { codigo: "U8170", labconf: "RSA" },
+    { codigo: "U8170", labconf: "RMA" },
     { codigo: "99199.22", labconf: "N" },
     { codigo: "99401.13", labconf: "" },
     { codigo: "99401", labconf: "" },
@@ -154,9 +164,14 @@ export class ExcelsheetComponent implements OnInit {
     { codigo: "Z636.1", labconf: "" },
     { codigo: "C8002", labconf: "1" },
     { codigo: "99401", labconf: "1" },
+    { codigo: "E46X", labconf: "IMC" },
     { codigo: "Z006", labconf: "IMC" },
+    { codigo: "E660", labconf: "IMC" },
+    { codigo: "E669", labconf: "IMC" },
     { codigo: "999403.01", labconf: "1" },
-    { codigo: "U8170", labconf: "RS" },
+    { codigo: "U8170", labconf: "RSM" },
+    { codigo: "U8170", labconf: "RSA" },
+    { codigo: "U8170", labconf: "RMA" },
     { codigo: "Z010", labconf: "N" },
     { codigo: "99173", labconf: "20" },
     { codigo: "99401.13", labconf: "" },
@@ -289,11 +304,12 @@ export class ExcelsheetComponent implements OnInit {
     let var1 = "NO";
     this.codigosRealizados.forEach((e:any) =>{
       if (e.codigo === codigo.codigo) {
-        var1 = 'SI CODIGO';
         if (e.labconf === codigo.labconf) {
           var1 = 'SI CODIGO y LABCONF'
-        }
-        if (codigo.labconf !== ""){
+          if (codigo.labconf === ""){
+            var1 = 'SI CODIGO';
+          }
+        }else{
           var1 = 'SI CODIGO , NO LABCONF ('+e.labconf+')';
         }
       };
@@ -322,8 +338,10 @@ export class ExcelsheetComponent implements OnInit {
       if (e.codigo === codigo.codigo) {
         if (e.labconf === codigo.labconf) {
           var1 = 'SI CODIGO y LABCONF'
-        }
-        if (codigo.labconf !== ""){
+          if (codigo.labconf === ""){
+            var1 = 'SI CODIGO';
+          }
+        }else{
           var1 = 'SI CODIGO , NO LABCONF ('+e.labconf+')';
         }
         var1 += ' , SOLO 1 VEZ';
