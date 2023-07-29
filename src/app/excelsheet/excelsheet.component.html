@@ -35,9 +35,9 @@
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresJovenMe1er">
-        <td>{{item.codigo}}</td>
-        <td>{{item.labconf}}</td>
-        <td>{{comparar(item)}}</td>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.codigo}}</td>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.labconf}}</td>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{comparar(item)}}</td>
       </tr>
     </table>
   </section>
@@ -50,9 +50,9 @@
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresJovenOtros1er">
-        <td>{{item.codigo}}</td>
-        <th>{{item.labconf}}</th>
-        <td>{{comparar(item)}}</td>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.codigo}}</td>
+        <th [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.labconf}}</th>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{comparar(item)}}</td>
       </tr>
     </table>
   </section>
@@ -65,9 +65,9 @@
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresJovenDr2do">
-        <td>{{item.codigo}}</td>
-        <th>{{item.labconf}}</th>
-        <td>{{compararJoven2da(item)}}</td>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.codigo}}</td>
+        <th [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.labconf}}</th>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{compararJoven2da(item)}}</td>
       </tr>
     </table>
   </section>
@@ -80,9 +80,9 @@
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresJovenOtros2do">
-        <td>{{item.codigo}}</td>
-        <th>{{item.labconf}}</th>
-        <td>{{compararJoven2da(item)}}</td>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.codigo}}</td>
+        <th [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.labconf}}</th>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{compararJoven2da(item)}}</td>
       </tr>
     </table>
   </section>
@@ -98,9 +98,9 @@
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresAdultoDr1er">
-        <td>{{item.codigo}}</td>
-        <th>{{item.labconf}}</th>
-        <td>{{comparar(item)}}</td>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.codigo}}</td>
+        <th [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.labconf}}</th>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{comparar(item)}}</td>
       </tr>
     </table>
   </section>
@@ -113,9 +113,9 @@
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresAdultoOtros1er">
-        <td>{{item.codigo}}</td>
-        <th>{{item.labconf}}</th>
-        <td>{{comparar(item)}}</td>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.codigo}}</td>
+        <th [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.labconf}}</th>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{comparar(item)}}</td>
       </tr>
     </table>
   </section>
@@ -128,9 +128,9 @@
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresAdultoDr2do">
-        <td>{{item.codigo}}</td>
-        <th>{{item.labconf}}</th>
-        <td>{{compararAdulto2da(item)}}</td>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.codigo}}</td>
+        <th [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.labconf}}</th>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{compararAdulto2da(item)}}</td>
       </tr>
     </table>
   </section>
@@ -143,9 +143,9 @@
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresAdultoOtros2do">
-        <td>{{item.codigo}}</td>
-        <th>{{item.labconf}}</th>
-        <td>{{compararAdulto2da(item)}}</td>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.codigo}}</td>
+        <th [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.labconf}}</th>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{compararAdulto2da(item)}}</td>
       </tr>
     </table>
   </section>
@@ -161,9 +161,9 @@
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresAdulMayorDr1er">
-        <td>{{item.codigo}}</td>
-        <th>{{item.labconf}}</th>
-        <td>{{comparar(item)}}</td>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.codigo}}</td>
+        <th [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.labconf}}</th>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{comparar(item)}}</td>
       </tr>
     </table>
   </section>
@@ -176,9 +176,9 @@
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresAdulMayorOtros1er">
-        <td>{{item.codigo}}</td>
-        <th>{{item.labconf}}</th>
-        <td>{{comparar(item)}}</td>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.codigo}}</td>
+        <th [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.labconf}}</th>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{comparar(item)}}</td>
       </tr>
     </table>
   </section>
@@ -191,9 +191,9 @@
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresAdulMayorDr2do">
-        <td>{{item.codigo}}</td>
-        <th>{{item.labconf}}</th>
-        <td>{{compararAdulMayor2da(item)}}</td>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.codigo}}</td>
+        <th [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.labconf}}</th>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{compararAdulMayor2da(item)}}</td>
       </tr>
     </table>
   </section>
@@ -206,9 +206,9 @@
           <th>¿ENCONTRADO?</th>
       </tr>
       <tr *ngFor="let item of valoresAdulMayorOtros2do">
-        <td>{{item.codigo}}</td>
-        <th>{{item.labconf}}</th>
-        <td>{{compararAdulMayor2da(item)}}</td>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.codigo}}</td>
+        <th [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{item.labconf}}</th>
+        <td [ngStyle]="{'background-color': (item.color == undefined) ? '#ffffff' : item.color}">{{compararAdulMayor2da(item)}}</td>
       </tr>
     </table>
   </section>
