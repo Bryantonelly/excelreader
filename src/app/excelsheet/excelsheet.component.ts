@@ -337,6 +337,7 @@ export class ExcelsheetComponent implements OnInit {
 
     this.codigosRealizados.forEach((e:any) =>{
       if (e.codigo === codigo.codigo) {
+        var1 = 'SI CODIGO';
         if (e.labconf === codigo.labconf) {
           var1 = 'SI CODIGO y LABCONF'
           if (codigo.labconf === ""){
@@ -345,11 +346,15 @@ export class ExcelsheetComponent implements OnInit {
         }else{
           var1 = 'SI CODIGO , NO LABCONF ('+e.labconf+')';
         }
-        var1 += ' , SOLO 1 VEZ';
+        let contador: number = 1;
         valoresRepe.forEach((e) => {
-          if(e.codigo == codigo) e.contador += e.contador
-          if(e.contador == 2) var1 += ' , SI 2 VECES';
+          if(e.codigo == codigo) {
+            e.contador += e.contador
+            console.log("contador: ", e.contador);
+          }
+          // if(e.contador == 2) var1 += ' , SI 2 VECES';
         });
+        var1 += ' , APARECE '+contador+' VECES';
       }
     })
     return var1;
@@ -377,17 +382,22 @@ export class ExcelsheetComponent implements OnInit {
 
     this.codigosRealizados.forEach((e:any) =>{
       if (e.codigo === codigo.codigo) {
+        var1 = 'SI CODIGO';
         if (e.labconf === codigo.labconf) {
           var1 = 'SI CODIGO y LABCONF'
         }
         if (codigo.labconf !== ""){
           var1 = 'SI CODIGO , NO LABCONF ('+e.labconf+')';
         }
-        var1 += ' , SOLO 1 VEZ';
+        let contador: number = 1;
         valoresRepe.forEach((e) => {
-          if(e.codigo == codigo) e.contador += e.contador
-          if(e.contador == 2) var1 += ' , SI 2 VECES';
+          if(e.codigo == codigo) {
+            e.contador += e.contador
+            console.log("contador: ", e.contador);
+          }
+          // if(e.contador == 2) var1 += ' , SI 2 VECES';
         });
+        var1 += ' , APARECE '+contador+' VECES';
       }
     })
     return var1;
@@ -412,18 +422,23 @@ export class ExcelsheetComponent implements OnInit {
 
     this.codigosRealizados.forEach((e:any) =>{
       if (e.codigo === codigo.codigo) {
+        var1 = 'SI CODIGO';
         if (e.labconf === codigo.labconf) {
           var1 = 'SI CODIGO y LABCONF'
         }
         if (codigo.labconf !== ""){
           var1 = 'SI CODIGO , NO LABCONF ('+e.labconf+')';
         }
-        var1 += ' , SOLO 1 VEZ';
+
+        let contador: number = 1;
         valoresRepe.forEach((e) => {
-          if(e.codigo == codigo) e.contador += e.contador
-          var1 += ' , APARECE '+e.contador+' VECES';
+          if(e.codigo == codigo) {
+            e.contador += e.contador
+            console.log("contador: ", e.contador);
+          }
           // if(e.contador == 2) var1 += ' , SI 2 VECES';
         });
+        var1 += ' , APARECE '+contador+' VECES';
       }
     })
     return var1;
