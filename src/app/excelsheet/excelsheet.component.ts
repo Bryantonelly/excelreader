@@ -55,7 +55,7 @@ export class ExcelsheetComponent implements OnInit {
     { codigo: "99402.03", color:"#91C4F2", labconf: "1" },
     { codigo: "88141", color:"#D6A99A", labconf: "" },
     { codigo: "VACUNA", labconf: "" },
-    { codigo: "C0011", color:"9D79BC", labconf: "1" },
+    { codigo: "C0011", color:"#C8AB83", labconf: "1" },
     { codigo: "99401", color:"#85CB33", labconf: "" },
     { codigo: "96150.04", labconf: "" },
     { codigo: "99402.09", color:"#FF8E72", labconf: "" }
@@ -127,7 +127,7 @@ export class ExcelsheetComponent implements OnInit {
     { codigo: "99402.09", color:"#FF8E72", labconf: "2" },
     { codigo: "99402.03", color:"#91C4F2", labconf: "2" },
     { codigo: "99402.04", color:"#9D79BC", labconf: "2" },
-    { codigo: "C0011", color:"9D79BC", labconf: "2" },
+    { codigo: "C0011", color:"#C8AB83", labconf: "2" },
     { codigo: "99401", color:"#85CB33", labconf: "" }
   ];
   valoresAdultoDr2do = [
@@ -154,7 +154,7 @@ export class ExcelsheetComponent implements OnInit {
     { codigo: "90714", color:"#ff97b7", labconf: "1" },
     { codigo: "90658", color:"#ffb700", labconf: "" },
     { codigo: "90749.02", color:"#06d6a0", labconf: "" },
-    { codigo: "C0011", color:"9D79BC", labconf: "1" },
+    { codigo: "C0011", color:"#C8AB83", labconf: "1" },
     { codigo: "99401", color:"#85CB33", labconf: "" },
     { codigo: "96150.04", color:"#6096ba", labconf: "" },
     { codigo: "99402.09", color:"#FF8E72", labconf: "" }
@@ -204,7 +204,7 @@ export class ExcelsheetComponent implements OnInit {
     { codigo: "88141", color:"#D6A99A", labconf: "" },
     { codigo: "99402.08", color:"#E16036", labconf: "1" },
     { codigo: "90658", color:"#ffb700", labconf: "" },
-    { codigo: "C0011", color:"9D79BC", labconf: "1" }
+    { codigo: "C0011", color:"#C8AB83", labconf: "1" }
   ];
   valoresAdulMayorDr2do = [
     { codigo: "99387", color:"#c200fb", labconf: "AS" },
@@ -317,23 +317,38 @@ export class ExcelsheetComponent implements OnInit {
     })
     return var1;
   }
-  compararJoven2da(codigo: any): string{
+  valoresRepeJoven = [
+    { codigo: "Z000", color:"#D2BF55",  contador: 0 },
+    { codigo: "C8002", color:"#FFEED6", contador: 0 },
+    { codigo: "99403.01", color:"#4CE0B3", contador: 0 },
+    { codigo: "99401", color:"#85CB33", contador: 0 },
+    { codigo: "99173", contador: 0 },
+    { codigo: "99208", color:"#8CA0D7", contador: 0 },
+    { codigo: "99402.04", color:"#9D79BC", contador: 0 },
+    { codigo: "99402.03", color:"#91C4F2", contador: 0 },
+    { codigo: "88141", color:"#D6A99A", contador: 0 },
+    { codigo: "99402.08", color:"#E16036", contador: 0 },
+    { codigo: "C011", color:"#ccff66", contador: 0 },
+    { codigo: "99401", color:"#85CB33", contador: 0 },
+    { codigo: "99402.09", color:"#FF8E72", contador: 0 }
+  ];
+  valoresRepeJovenOtros = [
+    { codigo: "Z000", color:"#D2BF55",  contador: 0 },
+    { codigo: "C8002", color:"#FFEED6", contador: 0 },
+    { codigo: "99403.01", color:"#4CE0B3", contador: 0 },
+    { codigo: "99401", color:"#85CB33", contador: 0 },
+    { codigo: "99173", contador: 0 },
+    { codigo: "99208", color:"#8CA0D7", contador: 0 },
+    { codigo: "99402.04", color:"#9D79BC", contador: 0 },
+    { codigo: "99402.03", color:"#91C4F2", contador: 0 },
+    { codigo: "88141", color:"#D6A99A", contador: 0 },
+    { codigo: "99402.08", color:"#E16036", contador: 0 },
+    { codigo: "C011", color:"#ccff66", contador: 0 },
+    { codigo: "99401", color:"#85CB33", contador: 0 },
+    { codigo: "99402.09", color:"#FF8E72", contador: 0 }
+  ];
+  compararJoven2da(codigo: any, tipo: number): string{
     let var1 = "NO";
-    let valoresRepe = [
-      { codigo: "Z000", color:"#D2BF55",  contador: 0 },
-      { codigo: "C8002", color:"#FFEED6", contador: 0 },
-      { codigo: "99403.01", color:"#4CE0B3", contador: 0 },
-      { codigo: "99401", color:"#85CB33", contador: 0 },
-      { codigo: "99173", contador: 0 },
-      { codigo: "99208", color:"#8CA0D7", contador: 0 },
-      { codigo: "99402.04", color:"#9D79BC", contador: 0 },
-      { codigo: "99402.03", color:"#91C4F2", contador: 0 },
-      { codigo: "88141", color:"#D6A99A", contador: 0 },
-      { codigo: "99402.08", color:"#E16036", contador: 0 },
-      { codigo: "C011", color:"#ccff66", contador: 0 },
-      { codigo: "99401", color:"#85CB33", contador: 0 },
-      { codigo: "99402.09", color:"#FF8E72", contador: 0 }
-    ];
 
     this.codigosRealizados.forEach((e:any) =>{
       if (e.codigo === codigo.codigo) {
@@ -346,39 +361,70 @@ export class ExcelsheetComponent implements OnInit {
         }else{
           var1 = 'SI CODIGO , NO LABCONF ('+e.labconf+')';
         }
-        let contador: number = 1;
-        valoresRepe.forEach((e) => {
-          if(e.codigo == codigo) {
-            e.contador += e.contador
-            console.log("contador: ", e.contador);
-          }
-          // if(e.contador == 2) var1 += ' , SI 2 VECES';
-        });
+        let cod = e.codigo;
+        let contador = 1;
+        if(tipo==1){
+          this.valoresRepeJoven.forEach((e) => {
+            if(e.codigo == cod) {
+              e.contador += 1
+              contador = e.contador
+              console.log("contador: ", e.contador);
+            }
+            // if(e.contador == 2) var1 += ' , SI 2 VECES';
+          });
+        }else{
+          this.valoresRepeJovenOtros.forEach((e) => {
+            if(e.codigo == cod) {
+              e.contador += 1
+              contador = e.contador
+              console.log("contador: ", e.contador);
+            }
+            // if(e.contador == 2) var1 += ' , SI 2 VECES';
+          });
+        }
         var1 += ' , APARECE '+contador+' VECES';
       }
     })
     return var1;
   }
 
-  compararAdulto2da(codigo: any): string{
+  valoresRepeAdulto = [
+    { codigo: "Z000", color:"#D2BF55",  contador: 0 },
+    { codigo: "C8002", color:"#FFEED6", contador: 0 },
+    { codigo: "99403.01", color:"#4CE0B3", contador: 0 },
+    { codigo: "84152", color:"#edc531", contador: 0 },
+    { codigo: "99401.13", color:"#bb8588", contador: 0 },
+    { codigo: "99401", color:"#85CB33", contador: 0 },
+    { codigo: "99402.09", color:"#FF8E72", contador: 0 },
+    { codigo: "82270", color:"#a3a380", contador: 0 },
+    { codigo: "88141", color:"#D6A99A", contador: 0 },
+    { codigo: "99402.08", color:"#E16036", contador: 0 },
+    { codigo: "99402.09", color:"#FF8E72", contador: 0 },
+    { codigo: "99402.03", color:"#91C4F2", contador: 0 },
+    { codigo: "99402.04", color:"#9D79BC", contador: 0 },
+    { codigo: "C0011", color:"#C8AB83", contador: 0 },
+    { codigo: "99401", color:"#85CB33", contador: 0 }
+  ];
+  valoresRepeAdultoOtros = [
+    { codigo: "Z000", color:"#D2BF55",  contador: 0 },
+    { codigo: "C8002", color:"#FFEED6", contador: 0 },
+    { codigo: "99403.01", color:"#4CE0B3", contador: 0 },
+    { codigo: "84152", color:"#edc531", contador: 0 },
+    { codigo: "99401.13", color:"#bb8588", contador: 0 },
+    { codigo: "99401", color:"#85CB33", contador: 0 },
+    { codigo: "99402.09", color:"#FF8E72", contador: 0 },
+    { codigo: "82270", color:"#a3a380", contador: 0 },
+    { codigo: "88141", color:"#D6A99A", contador: 0 },
+    { codigo: "99402.08", color:"#E16036", contador: 0 },
+    { codigo: "99402.09", color:"#FF8E72", contador: 0 },
+    { codigo: "99402.03", color:"#91C4F2", contador: 0 },
+    { codigo: "99402.04", color:"#9D79BC", contador: 0 },
+    { codigo: "C0011", color:"#C8AB83", contador: 0 },
+    { codigo: "99401", color:"#85CB33", contador: 0 }
+  ];
+
+  compararAdulto2da(codigo: any, tipo: number): string{
     let var1 = "NO";
-    let valoresRepe = [
-      { codigo: "Z000", color:"#D2BF55",  contador: 0 },
-      { codigo: "C8002", color:"#FFEED6", contador: 0 },
-      { codigo: "99403.01", color:"#4CE0B3", contador: 0 },
-      { codigo: "84152", color:"#edc531", contador: 0 },
-      { codigo: "99401.13", color:"#bb8588", contador: 0 },
-      { codigo: "99401", color:"#85CB33", contador: 0 },
-      { codigo: "99402.09", color:"#FF8E72", contador: 0 },
-      { codigo: "82270", color:"#a3a380", contador: 0 },
-      { codigo: "88141", color:"#D6A99A", contador: 0 },
-      { codigo: "99402.08", color:"#E16036", contador: 0 },
-      { codigo: "99402.09", color:"#FF8E72", contador: 0 },
-      { codigo: "99402.03", color:"#91C4F2", contador: 0 },
-      { codigo: "99402.04", color:"#9D79BC", contador: 0 },
-      { codigo: "C0011", color:"9D79BC", contador: 0 },
-      { codigo: "99401", color:"#85CB33", contador: 0 }
-    ];
 
     this.codigosRealizados.forEach((e:any) =>{
       if (e.codigo === codigo.codigo) {
@@ -389,36 +435,63 @@ export class ExcelsheetComponent implements OnInit {
         if (codigo.labconf !== ""){
           var1 = 'SI CODIGO , NO LABCONF ('+e.labconf+')';
         }
-        let contador: number = 1;
-        valoresRepe.forEach((e) => {
-          if(e.codigo == codigo) {
-            e.contador += e.contador
-            console.log("contador: ", e.contador);
-          }
-          // if(e.contador == 2) var1 += ' , SI 2 VECES';
-        });
+        let cod = e.codigo;
+        let contador = 1;
+        if(tipo==1){
+          this.valoresRepeAdulto.forEach((e) => {
+            if(e.codigo == cod) {
+              e.contador += 1
+              contador = e.contador
+              console.log("contador: ", e.contador);
+            }
+            // if(e.contador == 2) var1 += ' , SI 2 VECES';
+          });
+        }else{
+          this.valoresRepeAdultoOtros.forEach((e) => {
+            if(e.codigo == cod) {
+              e.contador += 1
+              contador = e.contador
+              console.log("contador: ", e.contador);
+            }
+            // if(e.contador == 2) var1 += ' , SI 2 VECES';
+          });
+        }
         var1 += ' , APARECE '+contador+' VECES';
       }
     })
     return var1;
   }
 
-  compararAdulMayor2da(codigo: any): string{
+  valoresRepeAdultoMayor = [
+    { codigo: "99387", color:"#c200fb", contador: 0 },
+    { codigo: "Z636.1", color:"#6a994e", contador: 0 },
+    { codigo: "C8002", color:"#FFEED6", contador: 0 },
+    { codigo: "99401", color:"#85CB33", contador: 0 },
+    { codigo: "99403.01", color:"#4CE0B3", contador: 0 },
+    { codigo: "99401.13", color:"#bb8588", contador: 0 },
+    { codigo: "99402.09", color:"#FF8E72", contador: 0 },
+    { codigo: "82270", color:"#a3a380", contador: 0 },
+    { codigo: "88141", color:"#D6A99A", contador: 0 },
+    { codigo: "C011", color:"#ccff66", contador: 0 },
+    { codigo: "99402.09", color:"#FF8E72", contador: 0 },
+    { codigo: "99402.08", color:"#E16036", contador: 0 }
+  ];
+  valoresRepeAdultoMayorOtros = [
+    { codigo: "99387", color:"#c200fb", contador: 0 },
+    { codigo: "Z636.1", color:"#6a994e", contador: 0 },
+    { codigo: "C8002", color:"#FFEED6", contador: 0 },
+    { codigo: "99401", color:"#85CB33", contador: 0 },
+    { codigo: "99403.01", color:"#4CE0B3", contador: 0 },
+    { codigo: "99401.13", color:"#bb8588", contador: 0 },
+    { codigo: "99402.09", color:"#FF8E72", contador: 0 },
+    { codigo: "82270", color:"#a3a380", contador: 0 },
+    { codigo: "88141", color:"#D6A99A", contador: 0 },
+    { codigo: "C011", color:"#ccff66", contador: 0 },
+    { codigo: "99402.09", color:"#FF8E72", contador: 0 },
+    { codigo: "99402.08", color:"#E16036", contador: 0 }
+  ];
+  compararAdulMayor2da(codigo: any, tipo: number): string{
     let var1 = "NO";
-    let valoresRepe = [
-      { codigo: "99387", color:"#c200fb", contador: 0 },
-      { codigo: "Z636.1", color:"#6a994e", contador: 0 },
-      { codigo: "C8002", color:"#FFEED6", contador: 0 },
-      { codigo: "99401", color:"#85CB33", contador: 0 },
-      { codigo: "99403.01", color:"#4CE0B3", contador: 0 },
-      { codigo: "99401.13", color:"#bb8588", contador: 0 },
-      { codigo: "99402.09", color:"#FF8E72", contador: 0 },
-      { codigo: "82270", color:"#a3a380", contador: 0 },
-      { codigo: "88141", color:"#D6A99A", contador: 0 },
-      { codigo: "C011", color:"#ccff66", contador: 0 },
-      { codigo: "99402.09", color:"#FF8E72", contador: 0 },
-      { codigo: "99402.08", color:"#E16036", contador: 0 }
-    ];
 
     this.codigosRealizados.forEach((e:any) =>{
       if (e.codigo === codigo.codigo) {
@@ -429,15 +502,27 @@ export class ExcelsheetComponent implements OnInit {
         if (codigo.labconf !== ""){
           var1 = 'SI CODIGO , NO LABCONF ('+e.labconf+')';
         }
-
-        let contador: number = 1;
-        valoresRepe.forEach((e) => {
-          if(e.codigo == codigo) {
-            e.contador += e.contador
-            console.log("contador: ", e.contador);
-          }
-          // if(e.contador == 2) var1 += ' , SI 2 VECES';
-        });
+        let cod = e.codigo;
+        let contador = 1;
+        if(tipo == 1){
+          this.valoresRepeAdultoMayor.forEach((e) => {
+            if(e.codigo == cod) {
+              e.contador += 1
+              contador = e.contador
+              console.log("contador: ", e.contador);
+            }
+            // if(e.contador == 2) var1 += ' , SI 2 VECES';
+          });
+        }else{
+          this.valoresRepeAdultoMayorOtros.forEach((e) => {
+            if(e.codigo == cod) {
+              e.contador += 1
+              contador = e.contador
+              console.log("contador: ", e.contador);
+            }
+            // if(e.contador == 2) var1 += ' , SI 2 VECES';
+          });
+        }
         var1 += ' , APARECE '+contador+' VECES';
       }
     })
