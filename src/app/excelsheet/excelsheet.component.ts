@@ -162,7 +162,7 @@ export class ExcelsheetComponent implements OnInit {
 
   valoresAdulMayorDr1er = [
     { codigo: "99387", color:"#c200fb", labconf: "AS" },
-    { codigo: "Z636.1", color:"#6a994e", labconf: "" },
+    { codigo: "Z6361", color:"#6a994e", labconf: "" },
     { codigo: "C8002", color:"#FFEED6", labconf: "1" },
     { codigo: "99401", color:"#85CB33", labconf: "1" },
     { codigo: "E46X", labconf: "IMC" },
@@ -208,7 +208,7 @@ export class ExcelsheetComponent implements OnInit {
   ];
   valoresAdulMayorDr2do = [
     { codigo: "99387", color:"#c200fb", labconf: "AS" },
-    { codigo: "Z636.1", color:"#6a994e", labconf: "" },
+    { codigo: "Z6361", color:"#6a994e", labconf: "" },
     { codigo: "C8002", color:"#FFEED6", labconf: "TA" },
     { codigo: "99401", color:"#85CB33", labconf: "2" },
     { codigo: "99403.01", color:"#4CE0B3", labconf: "2" },
@@ -464,7 +464,7 @@ export class ExcelsheetComponent implements OnInit {
 
   valoresRepeAdultoMayor = [
     { codigo: "99387", color:"#c200fb", contador: 0 },
-    { codigo: "Z636.1", color:"#6a994e", contador: 0 },
+    { codigo: "Z6361", color:"#6a994e", contador: 0 },
     { codigo: "C8002", color:"#FFEED6", contador: 0 },
     { codigo: "99401", color:"#85CB33", contador: 0 },
     { codigo: "99403.01", color:"#4CE0B3", contador: 0 },
@@ -478,7 +478,7 @@ export class ExcelsheetComponent implements OnInit {
   ];
   valoresRepeAdultoMayorOtros = [
     { codigo: "99387", color:"#c200fb", contador: 0 },
-    { codigo: "Z636.1", color:"#6a994e", contador: 0 },
+    { codigo: "Z6361", color:"#6a994e", contador: 0 },
     { codigo: "C8002", color:"#FFEED6", contador: 0 },
     { codigo: "99401", color:"#85CB33", contador: 0 },
     { codigo: "99403.01", color:"#4CE0B3", contador: 0 },
